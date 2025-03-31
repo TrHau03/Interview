@@ -1,3 +1,4 @@
+import LottieView from 'lottie-react-native'
 import React from 'react'
 import { SafeAreaView, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
@@ -7,6 +8,7 @@ export type Props = { error: Error; resetError: () => void }
 const FallbackComponent: React.FC<Props> = (props) => {
     return (
         <SafeAreaView style={styles.container}>
+            <LottieView source={require('@/assets/animations/error.json')} autoPlay loop style={styles.animation} />
             <Text style={styles.heading}>Xảy ra lỗi</Text>
             <Text style={styles.description}>Có lỗi trong quá trình sử dụng ứng dụng.</Text>
             <TouchableOpacity style={styles.button} onPress={props.resetError} activeOpacity={0.8}>

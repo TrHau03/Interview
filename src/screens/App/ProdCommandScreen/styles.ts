@@ -1,6 +1,6 @@
 import { makeStyles, normalize } from '@rneui/themed'
 
-export const useStyles = makeStyles(({ fontFamily, fontSize, colors, spacing }) => {
+export const useStyles = makeStyles(({ fontSize, colors, spacing }) => {
     return {
         container: {
             flex: 1,
@@ -12,14 +12,12 @@ export const useStyles = makeStyles(({ fontFamily, fontSize, colors, spacing }) 
             gap: spacing.xl,
         },
         textNoCommand: {
-            fontFamily: fontFamily.LexendDeca,
             fontSize: fontSize.lg,
             fontWeight: '400',
             lineHeight: normalize(28),
             color: colors.textPrimary,
         },
         textStartCommand: {
-            fontFamily: fontFamily.LexendDeca,
             fontSize: fontSize.lg,
             fontWeight: '400',
             lineHeight: normalize(28),

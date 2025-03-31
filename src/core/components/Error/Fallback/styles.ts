@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
         marginBottom: 40,
         fontSize: 16,
     },
+    animation: {
+        width: 300,
+        height: 300,
+    },
 })
 
 export default styles

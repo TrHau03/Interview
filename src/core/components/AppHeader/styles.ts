@@ -1,6 +1,6 @@
 import { makeStyles, normalize } from '@rneui/themed'
 
-export const useStyles = makeStyles(({ colors, spacing, fontSize, fontFamily }) => {
+export const useStyles = makeStyles(({ colors, spacing, fontSize }) => {
     return {
         container: {
             flexDirection: 'row',
@@ -18,7 +18,6 @@ export const useStyles = makeStyles(({ colors, spacing, fontSize, fontFamily }) 
         textTitle: {
             flex: 1,
             textAlign: 'center',
-            fontFamily: fontFamily.LexendDeca,
             fontSize: fontSize.lg,
             fontWeight: '500',
             lineHeight: normalize(28),
