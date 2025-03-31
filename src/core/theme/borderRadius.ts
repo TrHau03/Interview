@@ -1,8 +1,8 @@
 export const borderRadius = {
-  sm: 2,
-  md: 4,
-  lg: 8,
-  xl: 12,
-};
+    sm: 2,
+    md: 4,
+    lg: 8,
+    xl: 12,
+}
 
-export type BorderRadius = typeof borderRadius;
+export type BorderRadius = typeof borderRadius

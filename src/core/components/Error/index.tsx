@@ -1,5 +1,5 @@
-import React, { type ComponentType, type ReactNode } from "react"
-import FallbackComponent, { type Props as FallbackComponentProps } from "./Fallback"
+import React, { type ComponentType, type ReactNode } from 'react'
+import FallbackComponent, { type Props as FallbackComponentProps } from './Fallback'
 
 export type Props = {
     children: Exclude<NonNullable<ReactNode>, string | number | boolean>
@@ -23,7 +23,7 @@ class ErrorBoundary extends React.Component<Props, State> {
     }
 
     componentDidCatch(error: Error, info: { componentStack: string }) {
-        if (typeof this.props.onError === "function") {
+        if (typeof this.props.onError === 'function') {
             this.props.onError(error, info.componentStack)
         }
     }
