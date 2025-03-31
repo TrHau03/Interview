@@ -6,7 +6,7 @@ import { IconLibrary, SVG } from '@/core/constants/icon'
 import { Button, normalize, Text, useTheme } from '@rneui/themed'
 import LottieView from 'lottie-react-native'
 import React from 'react'
-import { Pressable, View } from 'react-native'
+import { View } from 'react-native'
 import { useProdCommand } from './hooks/useProdCommand'
 import { useStyles } from './styles'
 
@@ -21,11 +21,8 @@ const ProdCommand = () => {
         <>
             <Wrapper isSafeArea={false} containerStyle={styles.container}>
                 <AppHeader
-                    leftIcon={
-                        <Pressable onPress={toggleSide}>
-                            <SVG.Menu width={normalize(32)} height={normalize(32)} fill={colors.white} />
-                        </Pressable>
-                    }
+                    leftIcon={<SVG.Menu width={normalize(32)} height={normalize(32)} fill={colors.white} />}
+                    onLeftPress={toggleSide}
                     title="Lệnh sản xuất"
                 />
                 <View style={styles.containerNoCommand}>
