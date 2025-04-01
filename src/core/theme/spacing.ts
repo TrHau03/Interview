@@ -1,9 +1,11 @@
+import { normalize } from '@rneui/themed'
+
 export const spacing = {
-    xl: 24,
-    lg: 20,
-    md: 16,
-    sm: 12,
-    xs: 8,
+    xl: normalize(24),
+    lg: normalize(20),
+    md: normalize(16),
+    sm: normalize(12),
+    xs: normalize(8),
 }
 
 export type Spacing = typeof spacing

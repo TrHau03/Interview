@@ -36,6 +36,7 @@ export const useStyles = makeStyles(({ colors, spacing, fontSize, borderRadius }
         },
         containerProgress: {
             flexDirection: 'row',
+            alignItems: 'center',
             gap: spacing.xs,
         },
     }

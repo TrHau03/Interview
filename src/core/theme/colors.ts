@@ -20,6 +20,7 @@ export const baseColors = {
     bgProgress1: '#FF9432',
     bgProgress2: '#0375F3',
     neutral03: '#667085',
+    neutral05: '#3A3E4C',
 }
 
 export const linerGradientColors: [string, string] = ['#E2F0FE00', '#C7DFFB36']

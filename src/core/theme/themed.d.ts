@@ -31,6 +31,7 @@ declare module '@rneui/themed' {
         bgProgress1: string
         bgProgress2: string
         neutral03: string
+        neutral05: string
     }
     export interface Theme {
         borderRadius: BorderRadius

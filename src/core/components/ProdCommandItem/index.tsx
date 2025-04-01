@@ -1,7 +1,6 @@
 import { IconLibrary } from '@/core/constants/icon'
 import { CommandType } from '@/core/entities/Command'
 import { linerGradientColors } from '@/core/theme/colors'
-import { logger } from '@/core/utils/logger'
 import { useAppDispatch } from '@/hooks/useRedux'
 import { prodCommandActions } from '@/redux/reducers/prodCommand/prodCommandReducer'
 import { normalize, useTheme } from '@rneui/themed'
@@ -10,6 +9,7 @@ import React, { memo } from 'react'
 import { Text, View } from 'react-native'
 import AppIcon from '../AppIcon'
 import Progress from '../Progress'
+import Tooltip from '../Tooltip'
 import { useStyles } from './styles'
 
 interface ProdCommandItemProps {
@@ -23,7 +23,15 @@ const ProdCommandItem: React.FC<ProdCommandItemProps> = (props) => {
         theme: { colors },
     } = useTheme()
     const dispatch = useAppDispatch()
-    logger.info('ProdCommandItem', item)
+
+    const data = [
+        { color: colors.bgProgress1, text: 'Tiến độ Kế hoạch Nguyên liệu', percent: item.progress1 },
+        {
+            color: colors.bgProgress2,
+            text: 'Tiến độ Nhập kho Thành phẩm',
+            percent: item.progress2,
+        },
+    ]
     let bgColor = ''
     let textColor = ''
 
@@ -62,13 +70,15 @@ const ProdCommandItem: React.FC<ProdCommandItemProps> = (props) => {
             <View style={styles.containerProgress}>
                 <Progress progress={item.progress1} color={colors.bgProgress1} />
                 <Progress progress={item.progress2} color={colors.bgProgress2} />
-                <AppIcon
-                    name="information-circle"
-                    type={IconLibrary.Ionicons}
-                    size={normalize(9.75)}
-                    isPaddingIcon={false}
-                    color={colors.neutral03}
-                />
+                <Tooltip data={data}>
+                    <AppIcon
+                        name="information-circle"
+                        type={IconLibrary.Ionicons}
+                        size={normalize(9.75)}
+                        isPaddingIcon={true}
+                        color={colors.neutral03}
+                    />
+                </Tooltip>
             </View>
         </LinearGradient>
     )
